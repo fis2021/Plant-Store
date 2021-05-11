@@ -4,6 +4,7 @@
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
 <GridPane alignment="center" hgap="10" prefHeight="400" prefWidth="600" vgap="10" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.FIS2021.controllers.RegistrationController">
@@ -12,7 +13,14 @@
     </padding>
     <Text id="title-text" text="Forum App - Registration" GridPane.columnIndex="1" GridPane.columnSpan="2" />
 
-    <Label prefHeight="25.0" prefWidth="56.0" text="Username:" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+    <Label prefHeight="25.0" prefWidth="56.0" text="Username:" GridPane.columnIndex="1" GridPane.rowIndex="1">
+      <graphic>
+         <AmbientLight lightOn="true" opacity="0.0">
+            <color>
+               <Color red="0.24480000138282776" green="0.7200000286102295" blue="0.5321502089500427" />
+            </color>
+         </AmbientLight>
+      </graphic></Label>
 
     <TextField fx:id="usernameField" GridPane.columnIndex="2" GridPane.rowIndex="1" />
 
@@ -26,23 +34,9 @@
     </ChoiceBox>
 
     <Text fx:id="registrationMessage" GridPane.columnIndex="2" GridPane.rowIndex="7" />
-    <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="2" GridPane.rowIndex="5">
-        <Button onAction="#handleRegisterAction" text="Register" />
-    </HBox>
-   <AmbientLight color="CHARTREUSE" lightOn="true" GridPane.rowIndex="1" />
-   <columnConstraints>
-      <ColumnConstraints />
-      <ColumnConstraints />
-      <ColumnConstraints />
-   </columnConstraints>
-   <rowConstraints>
-      <RowConstraints />
-      <RowConstraints />
-      <RowConstraints />
-      <RowConstraints />
-      <RowConstraints />
-      <RowConstraints />
-      <RowConstraints />
-      <RowConstraints />
-   </rowConstraints>
+    <Button onAction="#loadLoginPage" text="Login" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+
+    <Button onAction="#handleRegisterAction" text="Register" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
 </GridPane>
+
+
