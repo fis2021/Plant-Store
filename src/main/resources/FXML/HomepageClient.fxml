@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Homepage1">
+    <children>
+        <AnchorPane prefHeight="68.0" prefWidth="143.0" style="-fx-background-color: #95F38E;">
+         <children>
+                <ImageView fitHeight="76.0" fitWidth="79.0" layoutX="34.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+<!--                        <Image url="@../../ProiectFis/plant-store/src/main/resources/img/IMG_0121%20(1).PNG" />-->
+                    </image>
+                </ImageView>
+         </children>
+        </AnchorPane>
+        <Pane layoutY="68.0" prefHeight="332.0" prefWidth="143.0" style="-fx-background-color: #95F38E;">
+            <children>
+                <ImageView fitHeight="57.0" fitWidth="154.0" layoutX="-11.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../img/plant1.jpeg" />
+                    </image>
+                </ImageView>
+                <Line endX="8.600006103515625" layoutX="121.0" layoutY="60.0" startX="-100.0" />
+                <Label layoutX="7.0" layoutY="86.0" prefHeight="24.0" prefWidth="129.0" style="-fx-background-color: #52eb47;" text="   Welcome to our plant store" textFill="#060606">
+                    <font>
+                        <Font name="Corbel Light" size="11.0" />
+                    </font>
+                </Label>
+                <Label contentDisplay="CENTER" layoutX="7.0" layoutY="110.0" prefHeight="24.0" prefWidth="129.0" style="-fx-background-color: #52eb47;" text="   Here you will find the perfect" textFill="#060606">
+                    <font>
+                        <Font name="Corbel Light" size="10.0" />
+                    </font>
+                </Label>
+                <Label contentDisplay="CENTER" layoutX="7.0" layoutY="134.0" prefHeight="24.0" prefWidth="129.0" style="-fx-background-color: #52eb47;" text="    plants for your home." textFill="#060606">
+                    <font>
+                        <Font name="Corbel Light" size="10.0" />
+                    </font>
+                </Label>
+                <Label layoutX="47.0" layoutY="190.0" prefHeight="19.0" prefWidth="50.0" text="Menu">
+                    <font>
+                        <Font name="Microsoft PhagsPa Bold" size="16.0" />
+                    </font>
+                </Label>
+                <Button layoutX="13.0" layoutY="222.0" mnemonicParsing="false" style="-fx-background-color: #95F38E;" text="SHOPPING CART">
+                    <font>
+                        <Font name="Verdana" size="12.0" />
+                    </font>
+                </Button>
+                <Button layoutX="16.0" layoutY="254.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="110.0" style="-fx-background-color: #95F38E;" text="LOG OUT">
+                    <font>
+                        <Font name="Verdana" size="12.0" />
+                    </font>
+                </Button>
+            </children>
+        </Pane>
+        <Button layoutX="185.0" layoutY="162.0" mnemonicParsing="false" style="-fx-background-color: #52eb47;" text="BUY IT">
+            <font>
+                <Font name="Candara" size="12.0" />
+            </font>
+        </Button>
+      <ImageView fitHeight="146.0" fitWidth="154.0" layoutX="156.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/20200712_142031.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="300.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../Proiect fis/plant-store/src/main/resources/img/20200712_144816.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="434.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../Proiect fis/plant-store/src/main/resources/img/Capture1.PNG" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="307.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+<!--            <Image url="@../../../../../../Proiect fis/plant-store/src/main/resources/img/Capture2.PNG" />-->
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="143.0" layoutX="154.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../Proiect fis/plant-store/src/main/resources/img/20200712_145643.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="175.0" layoutX="444.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../Proiect fis/plant-store/src/main/resources/img/Capture3.PNG" />
+         </image>
+      </ImageView>
+    </children>
+</AnchorPane>

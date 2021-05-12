@@ -62,7 +62,7 @@ public class LoginController {
             Stage stage = (Stage) loginMessage.getScene().getWindow();
             Parent registerRoot = FXMLLoader.load(getClass().getResource("/FXML/Register.fxml"));
             Scene scene = new Scene(registerRoot, 640, 800);
-            stage.setTitle("Plant Store log in!");
+            stage.setTitle("Forum App - Register");
             stage.setScene(scene);
         } catch (IOException e) {
             e.printStackTrace();
