@@ -1,28 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.Text?>
-<GridPane xmlns:fx="http://javafx.com/fxml/1" alignment="center" hgap="10" vgap="10" prefWidth="600" prefHeight="400"
-          xmlns="http://javafx.com/javafx/8.0.172-ea"
-          fx:controller="org.FIS2021.controllers.LoginController">
-    <padding>
-        <Insets bottom="25.0" left="25.0" right="25.0" top="25.0"/>
-    </padding>
-    <Text id="title-text" text="Forum App - Login" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="0"/>
+<?import javafx.scene.text.*?>
 
-    <Label text="Username:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
-
-    <TextField fx:id="usernameField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
-
-    <Label text="Password:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
-
-    <PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
-
-    <Button onAction="#loadRegisterPage" text="Register" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
-
-    <Button onAction="#handleLoginAction" text="Login" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
-
-    <Text fx:id="loginMessage" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
-</GridPane>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-500" prefHeight="361.0" prefWidth="647.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.FIS2021.controllers.LoginController">
+   <children>
+      <ImageView fitHeight="361.0" fitWidth="647.0" layoutX="2.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../plant.png" />
+         </image></ImageView>
+      <Label layoutX="134.0" layoutY="143.0" text="Username">
+         <font>
+            <Font name="Comic Sans MS Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="134.0" layoutY="184.0" prefHeight="18.0" prefWidth="66.0" text="Password">
+         <font>
+            <Font name="Comic Sans MS Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="usernameField" layoutX="209.0" layoutY="141.0" prefHeight="26.0" prefWidth="129.0" promptText="Username" />
+      <PasswordField fx:id="passwordField" layoutX="208.0" layoutY="182.0" prefHeight="26.0" prefWidth="130.0" promptText="Password" />
+      <Button layoutX="145.0" layoutY="242.0" mnemonicParsing="false" onAction="#handleLoginAction" prefHeight="26.0" prefWidth="64.0" style="-fx-background-color: white;" text="Log In">
+         <font>
+            <Font name="Comic Sans MS" size="12.0" />
+         </font></Button>
+      <Button layoutX="259.0" layoutY="242.0" mnemonicParsing="false" onAction="#loadRegisterPage" style="-fx-background-color: white;" text="Register">
+         <font>
+            <Font name="Comic Sans MS" size="12.0" />
+         </font>
+      </Button>
+      <Text fx:id="loginMessage" fill="#ea1919" layoutX="135.0" layoutY="298.0" wrappingWidth="229.00001448392868" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+   </children>
+</AnchorPane>
