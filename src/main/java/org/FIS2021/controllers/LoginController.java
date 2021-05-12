@@ -44,7 +44,7 @@ public class LoginController {
         try{
             String stored_password = UserService.getHashedUserPassword(username);
             if(stored_password.equals(encoded_password)){
-               loginMessage.setText(String.format("Logged in as %s!", username));
+                loginMessage.setText(String.format("Logged in as %s!", username));
                 return;
             }
 
