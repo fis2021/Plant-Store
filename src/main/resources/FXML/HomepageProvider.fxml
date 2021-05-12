@@ -48,7 +48,7 @@
                         <Font name="Microsoft PhagsPa Bold" size="16.0" />
                     </font>
                 </Label>
-                <Button layoutX="13.0" layoutY="222.0" mnemonicParsing="false" style="-fx-background-color: #95F38E;" text="Apporve item">
+                <Button layoutX="13.0" layoutY="222.0" mnemonicParsing="false" style="-fx-background-color: #95F38E;" text="SHOPPING CART">
                     <font>
                         <Font name="Verdana" size="12.0" />
                     </font>
@@ -72,27 +72,27 @@
         </ImageView>
         <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="300.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../../../../../../Proiect fis/plant-store/src/main/resources/img/20200712_144816.jpg" />
+                <Image url="@../../../../../../Proiect_fis/plant-store/src/main/resources/img/20200712_144816.jpg" />
             </image>
         </ImageView>
         <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="434.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../../../../../../Proiect fis/plant-store/src/main/resources/img/Capture1.PNG" />
+                <Image url="@../../../../../../Proiect_fis/plant-store/src/main/resources/img/Capture1.PNG" />
             </image>
         </ImageView>
         <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="307.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <!--            <Image url="@../../../../../../Proiect fis/plant-store/src/main/resources/img/Capture2.PNG" />-->
+                           <Image url="@../../../../../../Proiect_fis/plant-store/src/main/resources/img/Capture2.PNG" />
             </image>
         </ImageView>
         <ImageView fitHeight="150.0" fitWidth="143.0" layoutX="154.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../../../../../../Proiect fis/plant-store/src/main/resources/img/20200712_145643.jpg" />
+                <Image url="@../../../../../../Proiect_fis/plant-store/src/main/resources/img/20200712_145643.jpg" />
             </image>
         </ImageView>
         <ImageView fitHeight="150.0" fitWidth="175.0" layoutX="444.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../../../../../../Proiect fis/plant-store/src/main/resources/img/Capture3.PNG" />
+                <Image url="@../../../../../../Proiect_fis/plant-store/src/main/resources/img/Capture3.PNG" />
             </image>
         </ImageView>
     </children>

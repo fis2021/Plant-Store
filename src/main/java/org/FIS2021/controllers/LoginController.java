@@ -43,9 +43,14 @@ public class LoginController {
 
         try{
             String stored_password = UserService.getHashedUserPassword(username);
-            if(stored_password.equals(encoded_password)){
-                loginMessage.setText(String.format("Logged in as %s!", username));
-                return;
+            if(stored_password.equals(encoded_password))try {
+                Stage stage = (Stage) loginMessage.getScene().getWindow();
+                Parent registerRoot = FXMLLoader.load(getClass().getResource("/FXML/HomepageClient.fxml"));
+                Scene scene = new Scene(registerRoot, 640, 800);
+                stage.setTitle("Plant Store - Client main page");
+                stage.setScene(scene);
+            } catch (IOException e) {
+                e.printStackTrace();
             }
 
         } catch(UserNotFoundException e){
@@ -62,7 +67,7 @@ public class LoginController {
             Stage stage = (Stage) loginMessage.getScene().getWindow();
             Parent registerRoot = FXMLLoader.load(getClass().getResource("/FXML/Register.fxml"));
             Scene scene = new Scene(registerRoot, 640, 800);
-            stage.setTitle("Forum App - Register");
+            stage.setTitle("Plant Store - Register");
             stage.setScene(scene);
         } catch (IOException e) {
             e.printStackTrace();
