@@ -44,11 +44,21 @@ public class LoginController {
         try{
             String stored_password = UserService.getHashedUserPassword(username);
             if(stored_password.equals(encoded_password)){
-                loginMessage.setText(String.format("Logged in as %s!", username));
-                return;
+                if(UserService.getUser(username).getRole().equals("Client")){
+                    HomepageClient();
+                    return;
+                }
+                if(UserService.getUser(username).getRole().equals("Provider")){
+                    HomepageProvider();
+                    return;
+                }
+                if(UserService.getUser(username).getRole().equals("Manager")){
+                   HomepageManager();
+                    return;
+                }
             }
 
-        } catch(UserNotFoundException e){
+        } catch( UserNotFoundException e){
             loginMessage.setText(e.getMessage());
             return;
         }
@@ -61,13 +71,50 @@ public class LoginController {
         try {
             Stage stage = (Stage) loginMessage.getScene().getWindow();
             Parent registerRoot = FXMLLoader.load(getClass().getResource("/FXML/Register.fxml"));
-            Scene scene = new Scene(registerRoot, 640, 800);
-            stage.setTitle("Forum App - Register");
+            Scene scene = new Scene(registerRoot, 640, 480);
+            stage.setTitle("Plant Store - Register");
             stage.setScene(scene);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+    @FXML
+    public void HomepageClient(){
+        try {
+            Stage stage = (Stage) loginMessage.getScene().getWindow();
+            Parent registerRoot = FXMLLoader.load(getClass().getResource("/FXML/HomepageClient.fxml"));
+            Scene scene = new Scene(registerRoot, 640, 480);
+            stage.setTitle("Plant Store - Home page for client");
+            stage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    @FXML
+    public void HomepageProvider(){
+        try {
+            Stage stage = (Stage) loginMessage.getScene().getWindow();
+            Parent registerRoot = FXMLLoader.load(getClass().getResource("/FXML/HomepageProvider.fxml"));
+            Scene scene = new Scene(registerRoot, 640, 480);
+            stage.setTitle("Plant Store - Home page for provider");
+            stage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    @FXML
+    public void HomepageManager(){
+        try {
+            Stage stage = (Stage) loginMessage.getScene().getWindow();
+            Parent registerRoot = FXMLLoader.load(getClass().getResource("/FXML/HomepageManager.fxml"));
+            Scene scene = new Scene(registerRoot, 640, 480);
+            stage.setTitle("Plant Store - Home page for manager");
+            stage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 
 
 }
