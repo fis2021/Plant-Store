@@ -46,7 +46,7 @@
                         <Font name="Verdana" size="12.0" />
                     </font>
                 </Button>
-                <Button fx:id="butonLogOut" layoutX="16.0" layoutY="254.0" mnemonicParsing="false" onAction="#handleLogOut" prefHeight="23.0" prefWidth="110.0" style="-fx-background-color: #95F38E;" text="LOG OUT">
+                <Button fx:id="butonLogOut" layoutX="16.0" layoutY="254.0" mnemonicParsing="false" onAction="#handleLoginAction" prefHeight="23.0" prefWidth="110.0" style="-fx-background-color: #95F38E;" text="LOG OUT">
                     <font>
                         <Font name="Verdana" size="12.0" />
                     </font>
