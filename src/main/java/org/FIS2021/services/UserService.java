@@ -21,7 +21,7 @@ public class UserService {
 
     public static void initDatabase() {
         Nitrite database = Nitrite.builder()
-                .filePath(getPathToFile("forumapp.db").toFile())
+                .filePath(getPathToFile("PlantStore.db").toFile())
                 .openOrCreate("admin", "admin");
 
         userRepository = database.getRepository(User.class);

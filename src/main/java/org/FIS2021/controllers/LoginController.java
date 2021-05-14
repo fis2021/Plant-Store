@@ -71,7 +71,7 @@ public class LoginController {
         try {
             Stage stage = (Stage) loginMessage.getScene().getWindow();
             Parent registerRoot = FXMLLoader.load(getClass().getResource("/FXML/Register.fxml"));
-            Scene scene = new Scene(registerRoot, 640, 480);
+            Scene scene = new Scene(registerRoot, 636, 471);
             stage.setTitle("Plant Store - Register");
             stage.setScene(scene);
         } catch (IOException e) {
@@ -107,7 +107,7 @@ public class LoginController {
         try {
             Stage stage = (Stage) loginMessage.getScene().getWindow();
             Parent registerRoot = FXMLLoader.load(getClass().getResource("/FXML/HomepageManager.fxml"));
-            Scene scene = new Scene(registerRoot, 640, 480);
+            Scene scene = new Scene(registerRoot, 647, 361);
             stage.setTitle("Plant Store - Home page for manager");
             stage.setScene(scene);
         } catch (IOException e) {

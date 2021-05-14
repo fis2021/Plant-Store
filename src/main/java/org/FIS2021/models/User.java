@@ -1,10 +1,14 @@
 package org.FIS2021.models;
 
+import java.util.ArrayList;
+
 public class User {
 
     private String username;
     private String password;
     private String role;
+    private ArrayList<Plant> plante;
+    private ArrayList<Comanda> comenzi;
 
     public User() {
     }
@@ -13,6 +17,8 @@ public class User {
         this.username = username;
         this.password = password;
         this.role = role;
+        plante= new ArrayList<Plant>();
+        comenzi= new ArrayList<Comanda>();
     }
 
     public String getUsername() {
@@ -37,6 +43,20 @@ public class User {
 
     public void setRole(String role) {
         this.role = role;
+    }
+    public void addPlante(Plant p)
+    {
+        plante.add(p);
+    }
+
+    public ArrayList<Plant>getPlante()
+    {
+        return this.plante;
+    }
+
+    public ArrayList<Comanda> getComenzi(){
+
+        return this.comenzi;
     }
 
     @Override

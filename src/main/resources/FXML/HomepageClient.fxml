@@ -6,14 +6,14 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.FIS2021.controllers.HomepageClientController">
+<AnchorPane prefHeight="471.0" prefWidth="647.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.FIS2021.controllers.HomepageClientController">
     <children>
         <AnchorPane prefHeight="68.0" prefWidth="143.0" style="-fx-background-color: #95F38E;">
          <children>
 
          </children>
         </AnchorPane>
-        <Pane layoutY="68.0" prefHeight="332.0" prefWidth="143.0" style="-fx-background-color: #95F38E;">
+        <Pane layoutY="68.0" prefHeight="403.0" prefWidth="143.0" style="-fx-background-color: #95F38E;">
             <children>
                 <ImageView fitHeight="57.0" fitWidth="154.0" layoutX="-11.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                     <image>
@@ -36,7 +36,7 @@
                         <Font name="Corbel Light" size="10.0" />
                     </font>
                 </Label>
-                <Label layoutX="47.0" layoutY="190.0" prefHeight="19.0" prefWidth="50.0" text="Menu">
+                <Label layoutX="10.0" layoutY="170.0" prefHeight="20.0" prefWidth="50.0" text="Menu:">
                     <font>
                         <Font name="Microsoft PhagsPa Bold" size="16.0" />
                     </font>
@@ -46,47 +46,42 @@
                         <Font name="Verdana" size="12.0" />
                     </font>
                 </Button>
-                <Button fx:id="butonLogOut" layoutX="16.0" layoutY="254.0" mnemonicParsing="false" onAction="#handleLoginAction" prefHeight="23.0" prefWidth="110.0" style="-fx-background-color: #95F38E;" text="LOG OUT">
+                <Button fx:id="butonLogOut" layoutX="17.0" layoutY="295.0" mnemonicParsing="false" onAction="#handleLoginAction" prefHeight="23.0" prefWidth="110.0" style="-fx-background-color: #95F38E;" text="LOG OUT">
                     <font>
                         <Font name="Verdana" size="12.0" />
                     </font>
                 </Button>
+            <Button layoutX="21.0" layoutY="259.0" mnemonicParsing="false" style="-fx-background-color: #95F38E;" text="PAST ORDERS">
+               <font>
+                  <Font name="Verdana" size="12.0" />
+               </font>
+            </Button>
             </children>
         </Pane>
-        <Button layoutX="185.0" layoutY="162.0" mnemonicParsing="false" style="-fx-background-color: #52eb47;" text="BUY IT">
-            <font>
-                <Font name="Candara" size="12.0" />
-            </font>
-        </Button>
-      <ImageView fitHeight="146.0" fitWidth="154.0" layoutX="156.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../img/20200712_142031.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="300.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../img/20200712_144816.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="434.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../img/Capture1.PNG" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="307.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-        <Image url="@../img/Capture2.PNG" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="143.0" layoutX="154.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../img/20200712_145643.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="175.0" layoutX="444.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../img/Capture3.PNG" />
-         </image>
-      </ImageView>
+        <TextArea fx:id="ListaProduse" layoutX="157.0" layoutY="14.0" prefHeight="200.0" prefWidth="470.0" />
+        <Label layoutX="157.0" layoutY="237.0" prefHeight="17.0" prefWidth="50.0" text="Plant:">
+         <font>
+            <Font size="20.0" />
+         </font></Label>
+        <Label layoutX="157.0" layoutY="282.0" prefHeight="37.0" prefWidth="90.0" text="Quantity: ">
+         <font>
+            <Font size="20.0" />
+         </font></Label>
+        <TextField fx:id="idProdus" layoutX="249.0" layoutY="239.0" />
+        <TextField fx:id="cantitate" layoutX="249.0" layoutY="288.0" />
+        <Button layoutX="157.0" layoutY="387.0" mnemonicParsing="false" onAction="#addCart" text="Add to cart" />
+        <Label layoutX="158.0" layoutY="335.0" text="Total:">
+         <font>
+            <Font size="20.0" />
+         </font></Label>
+        <Text fx:id="total" layoutX="221.0" layoutY="356.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 lei">
+         <font>
+            <Font size="15.0" />
+         </font></Text>
+        <Text fx:id="mesaj" layoutX="450.0" layoutY="259.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="149.0">
+         <font>
+            <Font size="20.0" />
+         </font></Text>
+
     </children>
 </AnchorPane>

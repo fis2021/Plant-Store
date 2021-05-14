@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.FIS2021.services.Comandaservice;
 import org.FIS2021.services.FileSystemService;
 import org.FIS2021.services.UserService;
 
@@ -17,8 +18,9 @@ public class App extends Application {
     public void start(Stage stage) throws Exception {
         initDirectory();
         UserService.initDatabase();
+        Comandaservice.initDatabase();
         Parent root = FXMLLoader.load(getClass().getResource("/FXML/Register.fxml"));
-        stage.setTitle("Forum App - Registration");
+        stage.setTitle("Plant Store - Registration");
         stage.setScene(new Scene(root, 640, 480));
         stage.show();
     }
