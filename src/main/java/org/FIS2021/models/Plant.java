@@ -6,14 +6,17 @@ public class Plant {
     private String nume;
     private int pret;
     private String status;
+    private int cantitate;
 
 
-    public Plant(String provider,String nume, int pret, String status)
+    public Plant(String provider,String nume, int pret, String status, int cantitate)
     {
         this.nume=nume;
         this.pret=pret;
         this.status=status;
         this.provider=provider;
+        this.cantitate=cantitate;
+
     }
     public void setNume(String nume) {
         this.nume = nume;
@@ -37,8 +40,15 @@ public class Plant {
 
     public int getPret(){
         return pret;
-
     }
+
+    public void setCantitate(int cantitate) {
+        this.cantitate = cantitate;
+    }
+    public int getCantitate(){
+        return cantitate;
+    }
+
 
     public void setStatus(String status) {
         this.status = status;

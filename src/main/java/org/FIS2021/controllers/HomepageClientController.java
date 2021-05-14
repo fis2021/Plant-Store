@@ -1,5 +1,6 @@
 package org.FIS2021.controllers;
 
+import org.FIS2021.App;
 import org.FIS2021.models.User;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -20,7 +21,7 @@ public class HomepageClientController {
     @FXML
     private Button butonCreareCont;
     @FXML
-    private Button butonAlegereAngajat;
+    private Button butonShoppingCart;
     @FXML
     private Button butonLogOut;
     @FXML
@@ -55,4 +56,22 @@ public class HomepageClientController {
             e.printStackTrace();
         }
     }
+
+    @FXML
+    private void handleShoppingCart(){
+        try {
+            Stage stage = (Stage) butonShoppingCart.getScene().getWindow();
+            Parent loginRoot = FXMLLoader.load(getClass().getResource("/FXML/ShoppingCart.fxml"));
+            Scene scene = new Scene(loginRoot, 640, 480);
+            stage.setTitle("Plant Store - Shopping Cart");
+            stage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    @FXML
+    private void handleAddToCart()  {
+
+    }
+
 }

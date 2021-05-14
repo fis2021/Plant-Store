@@ -1,28 +1,36 @@
 package org.FIS2021.models;
 
+import javafx.fxml.FXML;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
+
 import java.util.ArrayList;
 
 public class Comanda {
 
-    private String client;
+    private String nrTel;
+    private String adresa;
+    private String username;
     private String status;
     private ArrayList<Plant> listaplante;
 
 
-    public Comanda(String client, String status,ArrayList<Plant> listaplante)
+    public Comanda(String nrTel, String adresa,String username, String status,ArrayList<Plant> listaplante)
     {
-        this.client=client;
+        this.nrTel =nrTel;
+        this.adresa=adresa;
+        this.username=username;
         this.listaplante=listaplante;
         this.status=status;
 
     }
 
-    public void setClient(String provider) {
-        this.client = client;
+    public void setClient(String client) {
+        this.username = username;
     }
 
     public String getClient(){
-        return client;
+        return username;
     }
 
     public void setStatus(String status) {
@@ -36,7 +44,13 @@ public class Comanda {
     {
         this.listaplante=listaplante;
     }
+    public void setNrTel(String nrTel) {
+        this.nrTel = nrTel;
+    }
 
+    public String getNrTel() {
+        return nrTel;
+    }
 
 
 }

@@ -10,6 +10,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import org.FIS2021.App;
 import org.FIS2021.exceptions.UserNotFoundException;
 import org.FIS2021.services.UserService;
 
@@ -42,8 +43,10 @@ public class LoginController {
         String encoded_password = UserService.encodePassword(username, password);
 
         try{
+
             String stored_password = UserService.getHashedUserPassword(username);
             if(stored_password.equals(encoded_password)){
+                App.setUser(UserService.getUser(username));
                 if(UserService.getUser(username).getRole().equals("Client")){
                     HomepageClient();
                     return;
