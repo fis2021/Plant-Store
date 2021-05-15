@@ -87,4 +87,20 @@ public class User {
                 ", role='" + role + '\'' +
                 '}';
     }
+  /*  public void addProduse(Planta p){
+        plante.add(p);
+    }
+
+    public ArrayList<Plant>getProduse(){
+        return this.plante; }
+
+    public ArrayList<Comanda> getComenzi(){
+        return this.comenzi;
+    }
+
+    public void PlasareComanda(ArrayList<Produs> produse,User vanzator,String NrTelefon,String Adresa,String modPlata,String dataInregistare,double total){
+        Comanda c= new Comanda(produse,Adresa,modPlata," ",total, App.getUser(),vanzator,NrTelefon,dataInregistare);
+        comenzi.add(c);
+        *
+     */
 }

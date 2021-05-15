@@ -1,6 +1,5 @@
 package org.FIS2021.models;
 
-
 public class Plant {
 
     private String provider;
