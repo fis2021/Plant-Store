@@ -6,15 +6,11 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="471.0" prefWidth="647.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.FIS2021.controllers.HomepageManagerController">
+<AnchorPane prefHeight="471.0" prefWidth="647.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.FIS2021.controllers.ShoppingCartController">
     <children>
         <AnchorPane prefHeight="68.0" prefWidth="143.0" style="-fx-background-color: #95F38E;">
             <children>
-                <ImageView fitHeight="76.0" fitWidth="79.0" layoutX="34.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <!--                        <Image url="@../../ProiectFis/plant-store/src/main/resources/img/IMG_0121%20(1).PNG" />-->
-                    </image>
-                </ImageView>
+
             </children>
         </AnchorPane>
         <Pane layoutY="68.0" prefHeight="403.0" prefWidth="143.0" style="-fx-background-color: #95F38E;">
@@ -40,35 +36,37 @@
                         <Font name="Corbel Light" size="10.0" />
                     </font>
                 </Label>
-                <Label layoutX="47.0" layoutY="190.0" prefHeight="19.0" prefWidth="50.0" text="Menu">
+                <Label layoutX="10.0" layoutY="170.0" prefHeight="20.0" prefWidth="50.0" text="Menu:">
                     <font>
                         <Font name="Microsoft PhagsPa Bold" size="16.0" />
                     </font>
                 </Label>
-                <Button layoutX="7.0" layoutY="222.0" mnemonicParsing="false" style="-fx-background-color: #95F38E;" text="EDIT PLANTSTORE">
+                <Button layoutX="13.0" layoutY="222.0" mnemonicParsing="false" style="-fx-background-color: #95F38E;" text="SHOPPING CART">
                     <font>
                         <Font name="Verdana" size="12.0" />
                     </font>
                 </Button>
-                <Button fx:id="butonLogOut" layoutX="16.0" layoutY="254.0" mnemonicParsing="false" onAction="#handleLoginAction" prefHeight="23.0" prefWidth="110.0" style="-fx-background-color: #95F38E;" text="LOG OUT">
+                <Button fx:id="butonLogOut" layoutX="17.0" layoutY="295.0" mnemonicParsing="false" onAction="#handleLoginAction" prefHeight="23.0" prefWidth="110.0" style="-fx-background-color: #95F38E;" text="LOG OUT">
+                    <font>
+                        <Font name="Verdana" size="12.0" />
+                    </font>
+                </Button>
+
+                <Button  layoutX="17.0" layoutY="320.0" mnemonicParsing="false" onAction="#handleShoppingCart" prefHeight="23.0" prefWidth="110.0" style="-fx-background-color: #95F38E;" text="LOG OUT">
+                    <font>
+                        <Font name="Verdana" size="12.0" />
+                    </font>
+                </Button>
+                <Button layoutX="21.0" layoutY="259.0" mnemonicParsing="false" style="-fx-background-color: #95F38E;" text="PAST ORDERS">
                     <font>
                         <Font name="Verdana" size="12.0" />
                     </font>
                 </Button>
             </children>
         </Pane>
-        <TextArea fx:id="ListaProduse" layoutX="157.0" layoutY="14.0" prefHeight="200.0" prefWidth="470.0" />
-        <Label layoutX="157.0" layoutY="237.0" prefHeight="17.0" prefWidth="50.0" text="Plant:">
-            <font>
-                <Font size="20.0" />
-            </font></Label>
-        <Label layoutX="157.0" layoutY="282.0" prefHeight="37.0" prefWidth="90.0" text="Quantity: ">
-            <font>
-                <Font size="20.0" />
-            </font></Label>
-        <TextField fx:id="idProdus" layoutX="249.0" layoutY="239.0" />
-        <TextField fx:id="cantitate" layoutX="249.0" layoutY="288.0" />
-        <Button layoutX="157.0" layoutY="341.0" mnemonicParsing="false" onAction="#addCart" text="Add to PlantStore" />
 
+        <TextArea fx:id="ListaProduse" layoutX="157.0" layoutY="14.0" prefHeight="200.0" prefWidth="470.0" />
+        <Label fx:id="total" layoutX="120.0" layoutY="14.0" prefHeight="200.0" prefWidth="470.0" />
+        <Button layoutX="157.0" layoutY="387.0" mnemonicParsing="false" onAction="#placeOrder" text="Place Order" />
     </children>
 </AnchorPane>

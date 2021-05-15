@@ -24,9 +24,9 @@
         <TextField fx:id="usernameField" layoutX="214.0" layoutY="128.0" prefHeight="26.0" prefWidth="129.0" promptText="Username" />
         <PasswordField fx:id="passwordField" layoutX="213.0" layoutY="172.0" prefHeight="26.0" prefWidth="130.0" promptText="Password" />
         <Label layoutX="140.0" layoutY="214.0" text="Role:" GridPane.columnIndex="1" GridPane.rowIndex="3">
-         <font>
-            <Font name="Comic Sans MS Bold" size="14.0" />
-         </font></Label>
+            <font>
+                <Font name="Comic Sans MS Bold" size="14.0" />
+            </font></Label>
 
         <ChoiceBox fx:id="role" layoutX="213.0" layoutY="212.0" prefHeight="26.0" prefWidth="130.0" style="-fx-background-color: white;" GridPane.columnIndex="2" GridPane.rowIndex="3">
         </ChoiceBox>

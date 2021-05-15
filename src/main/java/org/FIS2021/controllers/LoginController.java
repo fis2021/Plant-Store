@@ -10,6 +10,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import org.FIS2021.App;
 import org.FIS2021.exceptions.UserNotFoundException;
 import org.FIS2021.services.UserService;
 
@@ -42,8 +43,10 @@ public class LoginController {
         String encoded_password = UserService.encodePassword(username, password);
 
         try{
+
             String stored_password = UserService.getHashedUserPassword(username);
             if(stored_password.equals(encoded_password)){
+                App.setUser(UserService.getUser(username));
                 if(UserService.getUser(username).getRole().equals("Client")){
                     HomepageClient();
                     return;
@@ -71,7 +74,7 @@ public class LoginController {
         try {
             Stage stage = (Stage) loginMessage.getScene().getWindow();
             Parent registerRoot = FXMLLoader.load(getClass().getResource("/FXML/Register.fxml"));
-            Scene scene = new Scene(registerRoot, 640, 480);
+            Scene scene = new Scene(registerRoot, 636, 471);
             stage.setTitle("Plant Store - Register");
             stage.setScene(scene);
         } catch (IOException e) {
@@ -107,7 +110,7 @@ public class LoginController {
         try {
             Stage stage = (Stage) loginMessage.getScene().getWindow();
             Parent registerRoot = FXMLLoader.load(getClass().getResource("/FXML/HomepageManager.fxml"));
-            Scene scene = new Scene(registerRoot, 640, 480);
+            Scene scene = new Scene(registerRoot, 647, 361);
             stage.setTitle("Plant Store - Home page for manager");
             stage.setScene(scene);
         } catch (IOException e) {
