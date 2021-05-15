@@ -26,6 +26,9 @@ public class Comandaservice {
                 .openOrCreate("admin", "admin");
         comandaRepository = database.getRepository(Comanda.class);
     }
+    public static Nitrite getDatabase(){
+        return database;
+    }
 
     public static void addComanda(String nrTel, String adresa,String username, String status,ArrayList<Plant> listaplante) {
         comandaRepository.insert(new Comanda(nrTel, adresa , username, status, listaplante));

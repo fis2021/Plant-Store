@@ -60,7 +60,9 @@ public class PlantService {
         return plant;
     }
 
-
+    public static void initService() {
+        PendingPlantsRepository = Comandaservice.getDatabase().getRepository(Plant.class);
+    }
 
 
 }

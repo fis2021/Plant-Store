@@ -37,8 +37,11 @@ public class UserService {
         for(User u : cursor){
             return u;
         }
-
         throw new UserNotFoundException(username);
+    }
+
+    public static void updateUser(User v){
+        userRepository.update(v);
     }
 
     public static String getHashedUserPassword(String username) throws UserNotFoundException{
