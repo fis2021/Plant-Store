@@ -21,7 +21,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.FIS2021.App.cosCumparaturi;
+import static org.FIS2021.services.CartService.cosCumparaturi;
 
 
 public class HomepageClientController  {
@@ -41,7 +41,6 @@ public class HomepageClientController  {
     @FXML
     private User user;
     private int t=0;
-
 
     public void setUser(User user)
     {
@@ -100,7 +99,7 @@ public class HomepageClientController  {
 
         }
         catch(PlantNotFoundException e){
-            System.out.println("NPC :)");
+            System.out.println("ma ta");
             return;
         }
 

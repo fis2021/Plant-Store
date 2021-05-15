@@ -10,6 +10,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import org.FIS2021.models.Comanda;
+import org.FIS2021.services.CartService;
 import org.FIS2021.models.Plant;
 import org.FIS2021.App;
 import javafx.scene.control.Button;
@@ -60,7 +61,7 @@ public class ShoppingCartController {
     public void initialize(){
         String s="  Nume          Pret       Cantitate       Vanzator \n";
         String[] s1;
-        cos = App.getCos();
+        cos = CartService.getCos();
 
         for(Plant plant:cos){
             s1=plant.getNume().split("@");
@@ -81,7 +82,7 @@ public class ShoppingCartController {
         double x;
         //int aE=0,bE=0,cE=0;
 
-        for(Plant prod:App.getCos()){
+        for(Plant prod:CartService.getCos()){
             x=0.0;
             s1=prod.getNume();
             s=s1.split("@");
@@ -89,7 +90,7 @@ public class ShoppingCartController {
 
             if(vizitat.isEmpty() || vizitat.indexOf(s[0])==-1){
                 vizitat.add(s[0]);
-                for(Plant p:App.getCos()){
+                for(Plant p:CartService.getCos()){
 
                     s2=p.getNume().split("@");
                     if(s2[0].equals(s[0])){
@@ -103,7 +104,7 @@ public class ShoppingCartController {
 
         }
         mesaj.setText("Comanda trimisa!");
-        App.golireCos();
+        CartService.golireCos();
 
 
 
