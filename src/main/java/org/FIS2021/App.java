@@ -18,7 +18,7 @@ import java.util.ArrayList;
 public class App extends Application {
 
     private static User user;
-    private static ArrayList<Plant> cosCumparaturi = new ArrayList<Plant>();
+    public static ArrayList<Plant> cosCumparaturi = new ArrayList<Plant>();
     @Override
 
 

@@ -1,19 +1,20 @@
 package org.FIS2021.models;
 
+
 public class Plant {
 
     private String provider;
     private String nume;
     private int pret;
-    private String status;
     private int cantitate;
 
+    public Plant() {
+    }
 
-    public Plant(String provider,String nume, int pret, String status, int cantitate)
+    public Plant(String provider,String nume, int pret, int cantitate)
     {
         this.nume=nume;
         this.pret=pret;
-        this.status=status;
         this.provider=provider;
         this.cantitate=cantitate;
 
@@ -49,13 +50,13 @@ public class Plant {
         return cantitate;
     }
 
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public String getStatus(){
-        return status;
+    @Override
+    public String toString()
+    {
+        return "Planta:"+
+                "nume " + nume +
+                " , pret " + pret +
+                " , provider " + provider;
     }
 
 

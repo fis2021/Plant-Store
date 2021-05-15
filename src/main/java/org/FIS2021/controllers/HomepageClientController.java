@@ -1,6 +1,9 @@
 package org.FIS2021.controllers;
 
+
 import org.FIS2021.App;
+import org.FIS2021.exceptions.PlantNotFoundException;
+import org.FIS2021.models.Plant;
 import org.FIS2021.models.User;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,38 +12,52 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-
+import org.FIS2021.services.CartService;
+import org.FIS2021.services.PlantService;
 import javafx.scene.control.*;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
+
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
-public class HomepageClientController {
-    @FXML
-    private Button butonCreareCont;
+import static org.FIS2021.App.cosCumparaturi;
+
+
+public class HomepageClientController  {
+
+
     @FXML
     private Button butonShoppingCart;
     @FXML
     private Button butonLogOut;
     @FXML
-    private Button butonVizualizareListaServiciiSiPreturi;
+    private Text total;
     @FXML
-    private Button AlegereOptiuneDorita;
+    private TextField  idPlant;
     @FXML
-    private Button buttonCreate;
-    @FXML
-    private Text registrationMessage;
+    private TextField  cantitate;
 
     @FXML
     private User user;
+    private int t=0;
+
 
     public void setUser(User user)
     {
+
         this.user=user;
     }
+    @FXML
+    private ListView myView;
 
+    public void initialize() {
+        ArrayList<Plant> orders = PlantService.getAllPlants();
+        for (Plant o : orders) {
+            myView.getItems().add(o.toString());
+        }
+
+    }
 
 
 
@@ -70,8 +87,24 @@ public class HomepageClientController {
         }
     }
     @FXML
-    private void handleAddToCart()  {
+    private void handleAddToCart() {
+
+        try {
+            if(PlantService.getPlant(idPlant.getText()) != null) {
+                Plant p =(PlantService.getPlant(idPlant.getText()));
+                cosCumparaturi.add(new Plant(p.getProvider(), p.getNume(),p.getPret(),Integer.parseInt(cantitate.getText())));
+                System.out.println(PlantService.getPlant(idPlant.getText()).getNume()+ " yey");
+                t=t+PlantService.getPlant(idPlant.getText()).getPret()*Integer.parseInt(cantitate.getText());
+                total.setText(String.valueOf(t));
+            }
+
+        }
+        catch(PlantNotFoundException e){
+            System.out.println("NPC :)");
+            return;
+        }
 
     }
 
 }
+

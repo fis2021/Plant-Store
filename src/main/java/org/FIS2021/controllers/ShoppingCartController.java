@@ -65,7 +65,7 @@ public class ShoppingCartController {
         for(Plant plant:cos){
             s1=plant.getNume().split("@");
             t=t+plant.getPret()*plant.getCantitate();
-            s=s+plant.getNume()+"   "+plant.getPret()+"   "+s1[0]+"   "+plant.getStatus()+"\n";
+            s=s+plant.getNume()+"   "+plant.getPret()+"   "+s1[0]+"\n";
         }
         ListaProduse.setText(s);
         total.setText(t+" lei");
