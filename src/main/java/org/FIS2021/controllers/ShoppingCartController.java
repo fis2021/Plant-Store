@@ -9,15 +9,13 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import org.FIS2021.models.Comanda;
-import org.FIS2021.services.CartService;
 import org.FIS2021.models.Plant;
 import org.FIS2021.App;
 import javafx.scene.control.Button;
 
 
 import org.FIS2021.models.User;
-import org.FIS2021.services.UserService;
+import org.FIS2021.services.CartService;
 import org.FIS2021.services.Comandaservice;
 
 import java.io.IOException;
@@ -27,6 +25,8 @@ import java.util.ArrayList;
 public class ShoppingCartController {
     @FXML
     private Button butonLogOut;
+    @FXML
+    private Button butonHomepageClient;
     @FXML
     private TextField nrTel;
     @FXML
@@ -39,8 +39,7 @@ public class ShoppingCartController {
     private User user;
     @FXML
     private Label total;
-    private static int t;
-    private static Plant plant=null;
+    private static int t=0;
     private ArrayList<Plant> cos;
 
 
@@ -56,70 +55,44 @@ public class ShoppingCartController {
             e.printStackTrace();
         }
     }
-
     @FXML
-    public void initialize(){
-        String s="  Nume          Pret       Cantitate       Vanzator \n";
-        String[] s1;
-        cos = CartService.getCos();
-
-        for(Plant plant:cos){
-            s1=plant.getNume().split("@");
-            t=t+plant.getPret()*plant.getCantitate();
-            s=s+plant.getNume()+"   "+plant.getPret()+"   "+s1[0]+"\n";
-        }
-        ListaProduse.setText(s);
-        total.setText(t+" lei");
-    }
-
-    @FXML
-    public void placeOrder() {
-
-        ArrayList<Plant> produs= new ArrayList<Plant>();
-        String[]s,s2;
-        String s1;
-        ArrayList<String> vizitat = new ArrayList<String>();
-        double x;
-        //int aE=0,bE=0,cE=0;
-
-        for(Plant prod:CartService.getCos()){
-            x=0.0;
-            s1=prod.getNume();
-            s=s1.split("@");
-            produs.clear();
-
-            if(vizitat.isEmpty() || vizitat.indexOf(s[0])==-1){
-                vizitat.add(s[0]);
-                for(Plant p:CartService.getCos()){
-
-                    s2=p.getNume().split("@");
-                    if(s2[0].equals(s[0])){
-                        produs.add(p);
-                        x=x+p.getPret()*p.getCantitate();
-                    }
-                }
-                Comandaservice.addComanda(nrTel.getText(), adresa.getText(),App.getUser().getUsername(),"ordered",cos );
-            }
-
-
-        }
-        mesaj.setText("Comanda trimisa!");
-        CartService.golireCos();
-
-
-
-    }
-    @FXML
-    private void handleShoppingCart(){
+    private void handleHomepageClient(){
         try {
-            Stage stage = (Stage) butonLogOut.getScene().getWindow();
-            Parent loginRoot = FXMLLoader.load(getClass().getResource("/FXML/ShoppingCart.fxml"));
+            Stage stage = (Stage) butonHomepageClient.getScene().getWindow();
+            Parent loginRoot = FXMLLoader.load(getClass().getResource("/FXML/HomepageClient.fxml"));
             Scene scene = new Scene(loginRoot, 640, 480);
-            stage.setTitle("Plant Store - Shopping Cart");
+            stage.setTitle("Plant Store - Homepage Client");
             stage.setScene(scene);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
+    @FXML
+    public void initialize(){
+        String s="  Nume          Pret       Cantitate       Vanzator \n";
+        cos = CartService.getCos();
+        for(Plant plant:cos){
+            t=t+plant.getPret()*plant.getCantitate();
+            s=s+plant.getNume()+"     "+plant.getPret()+"   "+"   "+plant.getCantitate()+" \n";
+        }
+        ListaProduse.setText(s);
+        total.setText(t+" lei");
+    }
+
+
+    @FXML
+    public void placeOrder() {
+        try {
+            Stage stage = (Stage) butonLogOut.getScene().getWindow();
+            Parent loginRoot = FXMLLoader.load(getClass().getResource("/FXML/PlaceOrder.fxml"));
+            Scene scene = new Scene(loginRoot, 640, 480);
+            stage.setTitle("Plant Store -PlaceOrder");
+            stage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+    }
 }

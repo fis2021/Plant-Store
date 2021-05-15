@@ -56,7 +56,7 @@ public class LoginController {
                     return;
                 }
                 if(UserService.getUser(username).getRole().equals("Manager")){
-                   HomepageManager();
+                    HomepageManager();
                     return;
                 }
             }

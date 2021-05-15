@@ -9,9 +9,9 @@
 <AnchorPane prefHeight="471.0" prefWidth="647.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.FIS2021.controllers.HomepageClientController">
     <children>
         <AnchorPane prefHeight="68.0" prefWidth="143.0" style="-fx-background-color: #95F38E;">
-         <children>
+            <children>
 
-         </children>
+            </children>
         </AnchorPane>
         <Pane layoutY="68.0" prefHeight="403.0" prefWidth="143.0" style="-fx-background-color: #95F38E;">
             <children>
@@ -51,38 +51,40 @@
                         <Font name="Verdana" size="12.0" />
                     </font>
                 </Button>
-            <Button layoutX="21.0" layoutY="259.0" mnemonicParsing="false" style="-fx-background-color: #95F38E;" text="PAST ORDERS">
-               <font>
-                  <Font name="Verdana" size="12.0" />
-               </font>
-            </Button>
+                <Button layoutX="21.0" layoutY="259.0" mnemonicParsing="false" style="-fx-background-color: #95F38E;" text="PAST ORDERS">
+                    <font>
+                        <Font name="Verdana" size="12.0" />
+                    </font>
+                </Button>
             </children>
         </Pane>
-        <TextArea fx:id="ListaProduse" layoutX="157.0" layoutY="14.0" prefHeight="200.0" prefWidth="470.0" />
         <Label layoutX="157.0" layoutY="237.0" prefHeight="17.0" prefWidth="50.0" text="Plant:">
-         <font>
-            <Font size="20.0" />
-         </font></Label>
+            <font>
+                <Font size="20.0" />
+            </font></Label>
         <Label layoutX="157.0" layoutY="282.0" prefHeight="37.0" prefWidth="90.0" text="Quantity: ">
-         <font>
-            <Font size="20.0" />
-         </font></Label>
-        <TextField fx:id="idProdus" layoutX="249.0" layoutY="239.0" />
+            <font>
+                <Font size="20.0" />
+            </font></Label>
+        <TextField fx:id="idPlant" layoutX="249.0" layoutY="239.0" />
         <TextField fx:id="cantitate" layoutX="249.0" layoutY="288.0" />
 
-        <Button layoutX="157.0" layoutY="387.0" mnemonicParsing="false" onAction="#handleAddToCart" text="Add to cart" />
-        <Label layoutX="158.0" layoutY="335.0" text="Total:">
-         <font>
-            <Font size="20.0" />
-         </font></Label>
-        <Text fx:id="total" layoutX="221.0" layoutY="356.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 lei">
-         <font>
-            <Font size="15.0" />
-         </font></Text>
+        <Button layoutX="157.0" layoutY="337.0" mnemonicParsing="false" onAction="#handleAddToCart" text="Add to cart" />
+        <Label layoutX="400.0" layoutY="335.0" prefHeight="30.0" prefWidth="206.0" text="Total price:">
+            <font>
+                <Font size="20.0" />
+            </font></Label>
+        <Text fx:id="total" layoutX="503.0" layoutY="356.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="117.009765625">
+            <font>
+                <Font size="15.0" />
+            </font></Text>
         <Text fx:id="mesaj" layoutX="450.0" layoutY="259.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="149.0">
-         <font>
-            <Font size="20.0" />
-         </font></Text>
+            <font>
+                <Font size="20.0" />
+            </font></Text>
+        <ListView fx:id="myView" layoutX="182.0" layoutY="14.0" prefHeight="200.0" prefWidth="436.0">
+
+        </ListView>
 
     </children>
 </AnchorPane>

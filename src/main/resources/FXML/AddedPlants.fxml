@@ -6,7 +6,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="471.0" prefWidth="647.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.FIS2021.controllers.PlaceOrderController">
+<AnchorPane prefHeight="471.0" prefWidth="647.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.FIS2021.controllers.AddedPlants">
     <children>
         <AnchorPane prefHeight="68.0" prefWidth="143.0" style="-fx-background-color: #95F38E;">
             <children>
@@ -41,39 +41,21 @@
                         <Font name="Microsoft PhagsPa Bold" size="16.0" />
                     </font>
                 </Label>
-                <Button layoutX="22.0" layoutY="232.0" onAction="#handleHomePage" mnemonicParsing="false" style="-fx-background-color: #95F38E;" text="HOME PAGE">
+                <Button fx:id="butonHomepageProvider" layoutX="27.0" layoutY="223.0" mnemonicParsing="false" onAction="#handleHomepageProvider" style="-fx-background-color: #95F38E;" text="HOME PAGE">
                     <font>
                         <Font name="Verdana" size="12.0" />
                     </font>
                 </Button>
-                <Button fx:id="butonLogOut" layoutX="11.0" layoutY="264.0" mnemonicParsing="false" onAction="#handleLoginAction" prefHeight="23.0" prefWidth="110.0" style="-fx-background-color: #95F38E;" text="LOG OUT">
+                <Button fx:id="butonLogOut" layoutX="16.0" layoutY="254.0" mnemonicParsing="false" onAction="#handleLoginAction" prefHeight="23.0" prefWidth="110.0" style="-fx-background-color: #95F38E;" text="LOG OUT">
                     <font>
                         <Font name="Verdana" size="12.0" />
                     </font>
                 </Button>
             </children>
         </Pane>
-        <Label layoutX="195.0" layoutY="132.0" prefHeight="30.0" prefWidth="169.0" text="Numar de telefon:">
-            <font>
-                <Font size="20.0" />
-            </font></Label>
-        <Label layoutX="195.0" layoutY="184.0" prefHeight="38.0" prefWidth="110.0" text="Adresa:">
-            <font>
-                <Font size="20.0" />
-            </font></Label>
-        <TextField fx:id="idProdus" layoutX="398.0" layoutY="135.0" />
-        <TextField fx:id="cantitate" layoutX="398.0" layoutY="191.0" />
-        <Button layoutX="274.0" layoutY="352.0" mnemonicParsing="false" onAction="#handlePlaceOrder" prefHeight="26.0" prefWidth="99.0" text="Place Order" />
-        <Label layoutX="197.0" layoutY="254.0" text="Total:">
-            <font>
-                <Font size="20.0" />
-            </font></Label>
+        <Label layoutX="189.0" layoutY="75.0" prefHeight="192.0" prefWidth="414.0" style="-fx-background-color: green;" />
 
-        <Text fx:id="mesaj" layoutX="450.0" layoutY="259.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="149.0">
-            <font>
-                <Font size="20.0" />
-            </font></Text>
-        <Button layoutX="436.0" layoutY="352.0" mnemonicParsing="false" onAction="#handleCancel" prefHeight="26.0" prefWidth="99.0" text="Empty Cart" />
 
     </children>
 </AnchorPane>
+
