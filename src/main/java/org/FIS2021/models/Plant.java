@@ -1,8 +1,11 @@
 package org.FIS2021.models;
 
+import org.dizitart.no2.objects.Id;
+
 public class Plant {
 
     private String provider;
+    @Id
     private String nume;
     private int pret;
     private int cantitate;

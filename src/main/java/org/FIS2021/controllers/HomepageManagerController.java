@@ -53,6 +53,7 @@ public class HomepageManagerController {
 
 
     public void initialize() {
+        ListaProduse.getItems().clear();
         ArrayList<Plant> orders = PlantService.getAllPlantsProvider();
         for (Plant o : orders) {
             ListaProduse.getItems().add(o.toString());
@@ -66,12 +67,14 @@ public class HomepageManagerController {
         try {
             if (PlantService.getPlantProvider(idPlant.getText()) != null) {
                 Plant p = (PlantService.getPlantProvider(idPlant.getText()));
-
-
-
-
-                PlantService.managerAddPlant(new Plant(p.getProvider(), p.getNume(), p.getPret(), Integer.parseInt(cantitate.getText())));
-                // PlantService.managerRemovePlant(p);
+                PlantService.managerAddPlant(new Plant(p.getProvider(), p.getNume(), p.getPret(), Math.min(Integer.parseInt(cantitate.getText()), p.getCantitate())));
+                p.setCantitate(p.getCantitate()- Integer.parseInt(cantitate.getText()));
+                PlantService.updatePendingPlants(p);
+                if(PlantService.getPlantProvider(idPlant.getText()).getCantitate() <= 0)
+                {
+                    PlantService.managerRemovePlant(PlantService.getPlantProvider(idPlant.getText()));
+                }
+                initialize();
                 mesaj.setText(p.getNume() + "  has been added to the Plant Store");
             }
 
