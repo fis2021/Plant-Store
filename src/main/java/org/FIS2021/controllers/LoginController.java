@@ -110,7 +110,7 @@ public class LoginController {
         try {
             Stage stage = (Stage) loginMessage.getScene().getWindow();
             Parent registerRoot = FXMLLoader.load(getClass().getResource("/FXML/HomepageManager.fxml"));
-            Scene scene = new Scene(registerRoot, 647, 361);
+            Scene scene = new Scene(registerRoot, 640, 471);
             stage.setTitle("Plant Store - Home page for manager");
             stage.setScene(scene);
         } catch (IOException e) {

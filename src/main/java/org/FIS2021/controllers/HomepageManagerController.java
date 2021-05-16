@@ -63,7 +63,6 @@ public class HomepageManagerController {
 
     @FXML
     private void addPlantStore() {
-
         try {
             if (PlantService.getPlantProvider(idPlant.getText()) != null) {
                 Plant p = (PlantService.getPlantProvider(idPlant.getText()));
@@ -78,15 +77,11 @@ public class HomepageManagerController {
                 mesaj.setText(p.getNume() + "  has been added to the Plant Store");
             }
 
-
-
         } catch (PlantNotFoundException e) {
             return;
         }
+
     }
-
-
-
 
 }
 
