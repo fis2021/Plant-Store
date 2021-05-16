@@ -61,7 +61,7 @@ public class HomepageProviderController {
     @FXML
     private void handleAddedPlants(){
         try {
-            Stage stage = (Stage) butonAddedPlants.getScene().getWindow();
+            Stage stage = (Stage) butonLogOut.getScene().getWindow();
             Parent loginRoot = FXMLLoader.load(getClass().getResource("/FXML/AddedPlants.fxml"));
             Scene scene = new Scene(loginRoot, 640, 480);
             stage.setTitle("Plant Store - Shopping Cart");

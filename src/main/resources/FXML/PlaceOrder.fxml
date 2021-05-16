@@ -61,8 +61,8 @@
             <font>
                 <Font size="20.0" />
             </font></Label>
-        <TextField fx:id="idProdus" layoutX="398.0" layoutY="135.0" />
-        <TextField fx:id="cantitate" layoutX="398.0" layoutY="191.0" />
+        <TextField fx:id="nrTel" layoutX="398.0" layoutY="135.0" />
+        <TextField fx:id="adresa" layoutX="398.0" layoutY="191.0" />
         <Button layoutX="274.0" layoutY="352.0" mnemonicParsing="false" onAction="#handlePlaceOrder" prefHeight="26.0" prefWidth="99.0" text="Place Order" />
         <Label layoutX="197.0" layoutY="254.0" text="Total:">
             <font>
