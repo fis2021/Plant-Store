@@ -6,14 +6,18 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="471.0" prefWidth="647.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.FIS2021.controllers.HomepageProviderController">
+<AnchorPane prefHeight="480.0" prefWidth="647.0" style="-fx-background-color: #EEFFE9;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.FIS2021.controllers.HomepageProviderController">
     <children>
         <AnchorPane prefHeight="68.0" prefWidth="143.0" style="-fx-background-color: #95F38E;">
-            <children>
-
-            </children>
+         <children>
+            <ImageView fitHeight="79.0" fitWidth="81.0" layoutX="32.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/IMG_0121.PNG" />
+               </image>
+            </ImageView>
+         </children>
         </AnchorPane>
-        <Pane layoutY="68.0" prefHeight="403.0" prefWidth="143.0" style="-fx-background-color: #95F38E;">
+        <Pane layoutY="68.0" prefHeight="415.0" prefWidth="143.0" style="-fx-background-color: #95F38E;">
             <children>
                 <ImageView fitHeight="57.0" fitWidth="154.0" layoutX="-11.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                     <image>
@@ -26,12 +30,7 @@
                         <Font name="Corbel Light" size="11.0" />
                     </font>
                 </Label>
-                <Label contentDisplay="CENTER" layoutX="7.0" layoutY="110.0" prefHeight="24.0" prefWidth="129.0" style="-fx-background-color: #52eb47;" text="   Here you will find the perfect" textFill="#060606">
-                    <font>
-                        <Font name="Corbel Light" size="10.0" />
-                    </font>
-                </Label>
-                <Label contentDisplay="CENTER" layoutX="7.0" layoutY="134.0" prefHeight="24.0" prefWidth="129.0" style="-fx-background-color: #52eb47;" text="    plants for your home." textFill="#060606">
+                <Label contentDisplay="CENTER" layoutX="7.0" layoutY="110.0" prefHeight="24.0" prefWidth="129.0" style="-fx-background-color: #52eb47;" text="   Here you  can sell your plants." textFill="#060606">
                     <font>
                         <Font name="Corbel Light" size="10.0" />
                     </font>
@@ -41,7 +40,7 @@
                         <Font name="Microsoft PhagsPa Bold" size="16.0" />
                     </font>
                 </Label>
-                <Button layoutX="13.0" layoutY="222.0" onAction="#handleAddedPlants" mnemonicParsing="false" style="-fx-background-color: #95F38E;" text="ADDED PLANTS">
+                <Button layoutX="13.0" layoutY="222.0" mnemonicParsing="false" onAction="#handleAddedPlants" style="-fx-background-color: #95F38E;" text="ADDED PLANTS">
                     <font>
                         <Font name="Verdana" size="12.0" />
                     </font>
@@ -55,28 +54,33 @@
         </Pane>
         <Label layoutX="210.0" layoutY="60.0" prefHeight="21.0" prefWidth="137.0" text="Add plant name:">
             <font>
-                <Font size="15.0" />
+                <Font name="Comic Sans MS" size="15.0" />
             </font></Label>
         <TextField fx:id="PlantName" layoutX="375.0" layoutY="58.0" />
 
         <Label layoutX="211.0" layoutY="101.0" prefHeight="37.0" prefWidth="90.0" text="Price: ">
             <font>
-                <Font size="15.0" />
+                <Font name="Comic Sans MS" size="15.0" />
             </font></Label>
         <TextField fx:id="Price" layoutX="375.0" layoutY="107.0" />
 
         <Label layoutX="211.0" layoutY="151.0" prefHeight="37.0" prefWidth="90.0" text="Quantity: ">
             <font>
-                <Font size="15.0" />
+                <Font name="Comic Sans MS" size="15.0" />
             </font></Label>
         <TextField fx:id="Quantity" layoutX="375.0" layoutY="157.0" />
 
-        <Button layoutX="340.0" layoutY="229.0" mnemonicParsing="false" onAction="#handleAddPlant" text="Add plant" />
+        <Button layoutX="340.0" layoutY="229.0" mnemonicParsing="false" onAction="#handleAddPlant" style="-fx-background-color: #95F38E;" text="Add plant" />
 
         <Text fx:id="mesaj" layoutX="301.0" layoutY="335.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="149.0">
             <font>
                 <Font size="20.0" />
             </font></Text>
+      <ImageView fitHeight="283.0" fitWidth="190.0" layoutX="458.0" layoutY="199.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/background.png" />
+         </image>
+      </ImageView>
 
 
     </children>

@@ -6,14 +6,18 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="471.0" prefWidth="647.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.FIS2021.controllers.ShoppingCartController">
+<AnchorPane prefHeight="474.0" prefWidth="647.0" style="-fx-background-color: #EEFFE9;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.FIS2021.controllers.ShoppingCartController">
     <children>
         <AnchorPane prefHeight="68.0" prefWidth="143.0" style="-fx-background-color: #95F38E;">
-            <children>
-
-            </children>
+         <children>
+            <ImageView fitHeight="79.0" fitWidth="78.0" layoutX="28.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/IMG_0121.PNG" />
+               </image>
+            </ImageView>
+         </children>
         </AnchorPane>
-        <Pane layoutY="68.0" prefHeight="403.0" prefWidth="143.0" style="-fx-background-color: #95F38E;">
+        <Pane layoutY="68.0" prefHeight="419.0" prefWidth="143.0" style="-fx-background-color: #95F38E;">
             <children>
                 <ImageView fitHeight="57.0" fitWidth="154.0" layoutX="-11.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                     <image>
@@ -61,6 +65,11 @@
 
         <TextArea fx:id="ListaProduse" layoutX="157.0" layoutY="14.0" prefHeight="200.0" prefWidth="470.0" />
         <Label fx:id="total" layoutX="157.0" layoutY="226.0" prefHeight="87.0" prefWidth="222.0" />
-        <Button layoutX="157.0" layoutY="387.0" mnemonicParsing="false" onAction="#placeOrder" text="Place Order" />
+        <Button layoutX="157.0" layoutY="387.0" mnemonicParsing="false" onAction="#placeOrder" style="-fx-background-color: #95F38E;" text="Place Order" />
+      <ImageView fitHeight="272.0" fitWidth="183.0" layoutX="464.0" layoutY="213.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/background.png" />
+         </image>
+      </ImageView>
     </children>
 </AnchorPane>
