@@ -18,9 +18,6 @@ import org.FIS2021.services.PlantService;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import static org.FIS2021.services.CartService.cosCumparaturi;
-import static org.FIS2021.services.CartService.cosPlantStore;
-
 public class HomepageManagerController {
 
     @FXML
@@ -71,16 +68,21 @@ public class HomepageManagerController {
                 Plant p = (PlantService.getPlantProvider(idPlant.getText()));
 
 
-                    PlantService.managerAddPlant(new Plant(p.getProvider(), p.getNume(), p.getPret(), Integer.parseInt(cantitate.getText())));
-                    // PlantService.managerRemovePlant(p);
-                    mesaj.setText(p.getNume() + "  has been added to the Plant Store");
-                }
+
+
+                PlantService.managerAddPlant(new Plant(p.getProvider(), p.getNume(), p.getPret(), Integer.parseInt(cantitate.getText())));
+                // PlantService.managerRemovePlant(p);
+                mesaj.setText(p.getNume() + "  has been added to the Plant Store");
+            }
+
 
 
         } catch (PlantNotFoundException e) {
             return;
         }
     }
+
+
 
 
 }
