@@ -25,7 +25,7 @@ public class PlaceOrderController {
     @FXML
     private TextField nrTel;
     @FXML
-    private TextArea adresa;
+    private TextField adresa;
     @FXML
     private TextArea ListaProd;
     @FXML

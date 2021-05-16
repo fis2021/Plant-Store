@@ -55,7 +55,8 @@ public class Plant {
         return "Planta:"+
                 "nume " + nume +
                 " , pret " + pret +
-                " , provider " + provider;
+                " , provider " + provider +
+                " , quantity " + cantitate;
     }
 
 

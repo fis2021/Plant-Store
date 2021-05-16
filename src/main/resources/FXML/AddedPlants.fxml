@@ -6,7 +6,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="471.0" prefWidth="647.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.FIS2021.controllers.AddedPlants">
+<AnchorPane prefHeight="471.0" prefWidth="647.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.FIS2021.controllers.AddedPlants">
     <children>
         <AnchorPane prefHeight="68.0" prefWidth="143.0" style="-fx-background-color: #95F38E;">
             <children>
@@ -53,9 +53,9 @@
                 </Button>
             </children>
         </Pane>
-        <Label layoutX="189.0" layoutY="75.0" prefHeight="192.0" prefWidth="414.0" style="-fx-background-color: green;" />
+      <ListView fx:id="AddedPlants" layoutX="159.0" layoutY="20.0" prefHeight="200.0" prefWidth="468.0" />
+      <ListView fx:id="PendingPlants" layoutX="159.0" layoutY="248.0" prefHeight="200.0" prefWidth="462.0" />
 
 
     </children>
 </AnchorPane>
-

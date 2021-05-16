@@ -6,7 +6,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="471.0" prefWidth="647.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.FIS2021.controllers.HomepageClientController">
+<AnchorPane prefHeight="471.0" prefWidth="647.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.FIS2021.controllers.HomepageProviderController">
     <children>
         <AnchorPane prefHeight="68.0" prefWidth="143.0" style="-fx-background-color: #95F38E;">
             <children>
@@ -41,7 +41,7 @@
                         <Font name="Microsoft PhagsPa Bold" size="16.0" />
                     </font>
                 </Label>
-                <Button layoutX="13.0" layoutY="222.0" mnemonicParsing="false" style="-fx-background-color: #95F38E;" text="ADDED PLANTS">
+                <Button layoutX="13.0" layoutY="222.0" onAction="#handleAddedPlants" mnemonicParsing="false" style="-fx-background-color: #95F38E;" text="ADDED PLANTS">
                     <font>
                         <Font name="Verdana" size="12.0" />
                     </font>
@@ -71,7 +71,7 @@
             </font></Label>
         <TextField fx:id="Quantity" layoutX="375.0" layoutY="157.0" />
 
-        <Button layoutX="340.0" layoutY="229.0" mnemonicParsing="false" onAction="#addPlant" text="Add plant" />
+        <Button layoutX="340.0" layoutY="229.0" mnemonicParsing="false" onAction="#handleAddPlant" text="Add plant" />
 
         <Text fx:id="mesaj" layoutX="301.0" layoutY="335.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="149.0">
             <font>
