@@ -52,6 +52,7 @@ public class HomepageClientController  {
 
     public void initialize() {
         ArrayList<Plant> orders = PlantService.getAllPlantsShop();
+        System.out.println(orders);
         for (Plant o : orders) {
             myView.getItems().add(o.toString());
         }

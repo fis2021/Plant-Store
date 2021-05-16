@@ -1,6 +1,4 @@
 package org.FIS2021.controllers;
-
-
 import org.FIS2021.exceptions.PlantNotFoundException;
 import org.FIS2021.models.Plant;
 import org.FIS2021.models.User;
@@ -13,13 +11,16 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import javafx.scene.control.*;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import org.FIS2021.services.Comandaservice;
 import org.FIS2021.services.PlantService;
 
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class HomepageManagerController {
-
+public class EditPlantStoreController {
     @FXML
     private Button butonLogOut;
     @FXML
@@ -28,8 +29,6 @@ public class HomepageManagerController {
     private TextField idPlant;
     @FXML
     private TextField cantitate;
-    @FXML
-    private Text mesaj;
     @FXML
     private User user;
 
@@ -53,8 +52,7 @@ public class HomepageManagerController {
 
 
     public void initialize() {
-        ListaProduse.getItems().clear();
-        ArrayList<Plant> orders = PlantService.getAllPlantsProvider();
+        ArrayList<Plant> orders = PlantService.getAllPlantsShop();
         for (Plant o : orders) {
             ListaProduse.getItems().add(o.toString());
         }
@@ -62,30 +60,21 @@ public class HomepageManagerController {
     }
 
     @FXML
-    private void addPlantStore() {
+    private void removePlantStore() {
 
         try {
             if (PlantService.getPlantProvider(idPlant.getText()) != null) {
                 Plant p = (PlantService.getPlantProvider(idPlant.getText()));
-                PlantService.managerAddPlant(new Plant(p.getProvider(), p.getNume(), p.getPret(), Math.min(Integer.parseInt(cantitate.getText()), p.getCantitate())));
-                p.setCantitate(p.getCantitate()- Integer.parseInt(cantitate.getText()));
-                PlantService.updatePendingPlants(p);
-                if(PlantService.getPlantProvider(idPlant.getText()).getCantitate() <= 0)
-                {
-                    PlantService.managerRemovePlant(PlantService.getPlantProvider(idPlant.getText()));
-                }
-                initialize();
-                mesaj.setText(p.getNume() + "  has been added to the Plant Store");
+
+                PlantService.managerAddPlant(new Plant(p.getProvider(), p.getNume(), p.getPret(), Integer.parseInt(cantitate.getText())));
+
             }
 
-
-
         } catch (PlantNotFoundException e) {
+            System.out.println("ma ta");
             return;
         }
     }
-
-
 
 
 }

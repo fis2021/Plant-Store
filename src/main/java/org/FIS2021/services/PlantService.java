@@ -30,19 +30,27 @@ public class PlantService {
                 .openOrCreate("test", "test");
         AcceptedPlantsRepository = database2.getRepository(Plant.class);
     }
+    public static void updatePendingPlants(Plant p){
+        PendingPlantsRepository.update(p);
+    }
 
     public static void providerAddPlant(Plant planta) {
         PendingPlantsRepository.insert(planta);
     }
     public static void managerAddPlant(Plant planta) {
-        AcceptedPlantsRepository.insert(planta);
-    }
-    public static void managerRemovePlant(Plant planta)  throws PlantNotFoundException {
-        Cursor<Plant> cursor = PendingPlantsRepository.find(ObjectFilters.eq("nume", planta.getNume()));
-        for (Plant p : cursor) {
-            PendingPlantsRepository.remove(p);
+        if(AcceptedPlantsRepository.find(ObjectFilters.eq("nume", planta.getNume())).size() == 0) {
+            AcceptedPlantsRepository.insert(planta);
         }
-        throw new PlantNotFoundException(planta.getNume());
+        else {
+
+            Cursor<Plant> cursor  = AcceptedPlantsRepository.find(ObjectFilters.eq("nume", planta.getNume()));
+            Plant p= cursor.firstOrDefault();
+            p.setCantitate(p.getCantitate()+ planta.getCantitate());
+            AcceptedPlantsRepository.update(p);
+        }
+    }
+    public static void managerRemovePlant(Plant planta){
+       PendingPlantsRepository.remove(planta);
     }
 
     public static Plant getPlantProvider(String nume) throws PlantNotFoundException {
