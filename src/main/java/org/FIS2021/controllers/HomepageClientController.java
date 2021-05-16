@@ -51,7 +51,7 @@ public class HomepageClientController  {
     private ListView myView;
 
     public void initialize() {
-        ArrayList<Plant> orders = PlantService.getAllPlants();
+        ArrayList<Plant> orders = PlantService.getAllPlantsShop();
         for (Plant o : orders) {
             myView.getItems().add(o.toString());
         }
@@ -89,11 +89,11 @@ public class HomepageClientController  {
     private void handleAddToCart() {
 
         try {
-            if(PlantService.getPlant(idPlant.getText()) != null) {
-                Plant p =(PlantService.getPlant(idPlant.getText()));
+            if(PlantService.getPlantProvider(idPlant.getText()) != null) {
+                Plant p =(PlantService.getPlantProvider(idPlant.getText()));
                 cosCumparaturi.add(new Plant(p.getProvider(), p.getNume(),p.getPret(),Integer.parseInt(cantitate.getText())));
-                System.out.println(PlantService.getPlant(idPlant.getText()).getNume()+ " yey");
-                t=t+PlantService.getPlant(idPlant.getText()).getPret()*Integer.parseInt(cantitate.getText());
+                System.out.println(PlantService.getPlantProvider(idPlant.getText()).getNume()+ " yey");
+                t=t+PlantService.getPlantProvider(idPlant.getText()).getPret()*Integer.parseInt(cantitate.getText());
                 total.setText(String.valueOf(t));
             }
 
@@ -106,4 +106,3 @@ public class HomepageClientController  {
     }
 
 }
-

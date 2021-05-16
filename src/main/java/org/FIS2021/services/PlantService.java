@@ -34,18 +34,37 @@ public class PlantService {
     public static void providerAddPlant(Plant planta) {
         PendingPlantsRepository.insert(planta);
     }
+    public static void managerAddPlant(Plant planta) {
+        AcceptedPlantsRepository.insert(planta);
+    }
+    public static void managerRemovePlant(Plant planta)  throws PlantNotFoundException {
+        Cursor<Plant> cursor = PendingPlantsRepository.find(ObjectFilters.eq("nume", planta.getNume()));
+        for (Plant p : cursor) {
+            PendingPlantsRepository.remove(p);
+        }
+        throw new PlantNotFoundException(planta.getNume());
+    }
 
-    public static Plant getPlant(String nume) throws PlantNotFoundException {
+    public static Plant getPlantProvider(String nume) throws PlantNotFoundException {
         Cursor<Plant> cursor = PendingPlantsRepository.find(ObjectFilters.eq("nume", nume));
         for (Plant p : cursor) {
             return p;
         }
         throw new PlantNotFoundException(nume);
     }
-    public static ArrayList<Plant> getAllPlants() {
+    public static ArrayList<Plant> getAllPlantsProvider() {
 
         ArrayList<Plant> result = new ArrayList<>();
         for(Plant p :  PendingPlantsRepository.find()){
+            result.add(p);
+        }
+
+        return result;
+    }
+    public static ArrayList<Plant> getAllPlantsShop() {
+
+        ArrayList<Plant> result = new ArrayList<>();
+        for(Plant p : AcceptedPlantsRepository.find()){
             result.add(p);
         }
 
@@ -65,5 +84,5 @@ public class PlantService {
     }
 
 
-}
 
+}
